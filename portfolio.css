@@ -1,0 +1,309 @@
+/*
+==================================================
+  1. VARIÁVEIS CSS (Foco em Charcoal e Destaque Rosa)
+==================================================
+*/
+:root {
+    /* Cores fornecidas */
+    --charcoal: #595758ff;      /* Cinza Chumbo (Fundo Principal Escuro) */
+    --lavender-blush: #ffeef2ff;/* Lavanda Claríssimo (Fundo do Body / Texto Claro) */
+    --lavender-veil: #ffe4f3ff; /* Lavanda Suave (Fundo de Habilidades/Sombra) */
+    --pink-orchid: #ffc8fbff;   /* Rosa Orquídea (Títulos / Acento Secundário) */
+    --pink-mist: #ff92c2ff;     /* Rosa Névoa (DESTAQUE: Botões, Bordas) */
+
+    /* Mapeamento das variáveis do projeto */
+    --cor-primaria: var(--pink-mist);      
+    --cor-secundaria: var(--charcoal);     
+    --cor-fundo: var(--lavender-blush);    
+    --cor-card: var(--cor-fundo);          
+    --cor-acento: var(--lavender-veil);    
+    --cor-lavanda: var(--pink-orchid);     
+    
+    --espacamento-principal: 20px;
+}
+
+/*
+==================================================
+  2. ESTILOS GERAIS & MOBILE-FIRST
+==================================================
+*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    background-color: var(--cor-fundo);
+    color: var(--cor-secundaria);
+}
+
+h1, h2, h3 {
+    color: var(--cor-lavanda); /* Títulos em Rosa Orquídea (para fundo claro) */
+    margin-bottom: 15px;
+}
+
+/* ------------------------------------- */
+/* Layout Principal - Mobile (1 Coluna) */
+/* ------------------------------------- */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: var(--espacamento-principal);
+}
+
+/* ------------------------------------- */
+/* Cabeçalho e Navegação (CHARCOAL) */
+/* ------------------------------------- */
+#apresentacao {
+    text-align: center;
+    background: var(--cor-secundaria);
+    padding: 30px 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    color: var(--cor-fundo); 
+}
+
+#apresentacao h1 {
+    color: var(--cor-primaria);
+}
+
+.descricao {
+    color: var(--cor-fundo);
+}
+
+.perfil-foto {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border: 4px solid var(--cor-primaria);
+}
+
+.navegacao {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    border-top: 1px solid var(--cor-lavanda);
+    margin-top: 20px;
+}
+
+.navegacao a {
+    color: var(--cor-fundo);
+    text-decoration: none;
+    font-weight: 700;
+    padding: 5px;
+    transition: color 0.3s;
+}
+
+.navegacao a:hover {
+    color: var(--cor-primaria);
+}
+
+/* ------------------------------------- */
+/* LAYOUT DE PROJETOS - Otimização */
+/* ------------------------------------- */
+.projetos-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+.projeto-card {
+    background: var(--cor-card);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-bottom: 5px solid var(--cor-primaria);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.projeto-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px var(--cor-acento); 
+}
+
+.projeto-img {
+    width: 100%;
+    height: 200px; 
+    object-fit: cover; 
+    display: block;
+    margin-bottom: 10px; 
+}
+
+.btn-projeto {
+    display: inline-block;
+    background-color: var(--cor-primaria);
+    color: var(--cor-card); 
+    font-weight: 700;
+    padding: 8px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    transition: background-color 0.3s;
+}
+
+.btn-projeto:hover {
+    background-color: var(--cor-lavanda);
+    color: var(--cor-secundaria);
+}
+
+/* ------------------------------------- */
+/* Layout de Habilidades (Mobile: 3 Colunas) */
+/* ------------------------------------- */
+.habilidades-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); 
+    gap: 15px;
+    text-align: center;
+}
+
+.skill-card {
+    background: var(--cor-acento);
+    padding: 15px;
+    border-radius: 5px;
+    font-weight: 700;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.skill-card i {
+    display: block;
+    font-size: 2em;
+    margin-bottom: 5px;
+    color: var(--cor-primaria);
+}
+
+.skill-card:hover {
+    background-color: var(--cor-primaria);
+    color: var(--cor-card);
+}
+
+.skill-card:hover i {
+    color: var(--cor-card);
+}
+
+/* ------------------------------------- */
+/* Redes Sociais e Footer (Charcoal) */
+/* ------------------------------------- */
+.social-links h3 {
+    color: var(--cor-lavanda);
+}
+
+.social-links a {
+    font-size: 1.5em;
+    margin: 0 10px;
+    color: var(--cor-primaria);
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--cor-lavanda);
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: var(--cor-secundaria);
+    color: var(--cor-fundo);
+    font-size: 0.8em;
+}
+
+/*
+==================================================
+  3. MEDIA QUERY - TABLET (min-width: 768px)
+==================================================
+*/
+@media (min-width: 768px) {
+    .projetos-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px; 
+    }
+
+    #apresentacao {
+        text-align: left;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .perfil {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+}
+
+/*
+==================================================
+  4. MEDIA QUERY - DESKTOP (min-width: 1024px)
+==================================================
+*/
+@media (min-width: 1024px) {
+    .grid-container {
+        grid-template-columns: 280px 1fr; 
+        grid-template-rows: auto 1fr auto;
+        gap: 60px;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 60px;
+        grid-template-areas:
+            "sidebar projetos"
+            "sidebar projetos"
+            "sidebar habilidades"
+            "sidebar sobre";
+    }
+
+    #apresentacao {
+        grid-area: sidebar;
+        position: sticky;
+        top: 20px;
+        height: fit-content;
+        text-align: center;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        border-right: 2px solid var(--cor-primaria); 
+    }
+    
+    .perfil {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .navegacao {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        margin: 20px 0;
+        border-top: 1px solid var(--cor-lavanda);
+        padding-top: 20px;
+    }
+    
+    .navegacao a {
+        display: block;
+        text-align: left;
+        padding: 8px 10px;
+    }
+
+    /* Otimização da Seção de Projetos no Desktop */
+    .projetos-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px; 
+        /* Alinhamento ao centro para o caso de número ímpar de itens */
+        justify-items: center; 
+    }
+    
+    /* Centraliza o terceiro projeto na linha de baixo (se houver) */
+    .projeto-card:nth-child(3) {
+        /* Ocupa toda a largura do grid (2 colunas) */
+        grid-column: 1 / -1; 
+        /* Limita a largura para que não pareça grande demais */
+        width: 50%;
+        /* Centraliza o card na linha, pois está ocupando as 2 colunas */
+        justify-self: center; 
+    }
+
+}
